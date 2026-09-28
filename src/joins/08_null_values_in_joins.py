@@ -26,10 +26,5 @@ result.select("order_id", "customer_id", "name").show()
 # Identify rows with null customer_id.
 orders.filter(col("customer_id").isNull()).show()
 
-# Replace null with a readable label for display.
-orders.withColumn(
-    "customer_id_display",
-    coalesce(col("customer_id").cast("string"), lit("Unknown"))
-).show()
 
 spark.stop()
