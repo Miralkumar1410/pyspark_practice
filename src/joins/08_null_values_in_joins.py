@@ -26,4 +26,5 @@ result.select("order_id", "customer_id", "name").show()
 # Identify rows with null customer_id.
 orders.filter(col("customer_id").isNull()).show()
 
+
 spark.stop()
