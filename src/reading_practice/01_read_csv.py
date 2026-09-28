@@ -10,4 +10,9 @@ df = (
 
 df.printSchema()
 df.show(truncate=False)
+df.write \
+    .format("csv") \
+    .mode("overwrite") \
+    .option("header", "true") \
+    .save(DATA_PATH + r"\\customers_output.csv")
 spark.stop()
