@@ -1,9 +1,4 @@
-# PySpark Practice --- Individual SparkSession
-
-A structured PySpark practice repository covering fundamental DataFrame
-transformations, joins, and aggregations. Each Python file is designed
-as an independent practice exercise and can be executed separately with
-its own `SparkSession`.
+# PySpark Practice 
 
 ## Project Overview
 
@@ -15,6 +10,8 @@ The current modules cover:
 -   Basic DataFrame transformations
 -   Join operations
 -   Grouping and aggregation functions
+-   Advanced PySpark functions
+-   Window functions
 -   CSV-based input data
 
 ## Project Structure
@@ -48,15 +45,33 @@ pyspark_practice/
 │   │   ├── 07_duplicate_columns.py
 │   │   └── 08_null_values_in_joins.py
 │   │
-│   └── 03_aggregations/
-│       ├── 01_groupBy.py
-│       ├── 02_agg.py
-│       ├── 03_sum.py
-│       ├── 04_count.py
-│       ├── 05_avg.py
-│       ├── 06_min_max.py
-│       ├── 07_multiple_aggregations.py
-│       └── 08_multiple_grouping_columns.py
+│   ├── 03_aggregations/
+│   │   ├── 01_groupBy.py
+│   │   ├── 02_agg.py
+│   │   ├── 03_sum.py
+│   │   ├── 04_count.py
+│   │   ├── 05_avg.py
+│   │   ├── 06_min_max.py
+│   │   ├── 07_multiple_aggregations.py
+│   │   └── 08_multiple_grouping_columns.py
+│   │
+│   ├── 04_Advanced_Functions/
+│   │   ├── 01_string_functions.py
+│   │   ├── 02_numeric_functions.py
+│   │   ├── 03_date_time_functions.py
+│   │   ├── 04_aggregation_functions.py
+│   │   ├── 05_joins.py
+│   │   └── 06_array_functions.py
+│   │
+│   └── 05_Window_Functions/
+│       ├── 01_row_number.py
+│       ├── 02_rank.py
+│       ├── 03_dense_rank.py
+│       ├── 04_lag.py
+│       ├── 05_lead.py
+│       ├── 06_running_totals.py
+│       ├── 07_Window_partitionBy.py
+│       └── 08_Window_orderBy.py
 │
 ├── data/
 │   ├── customers.csv
@@ -162,6 +177,45 @@ aggregation functions.
 
   `08_multiple_grouping_columns.py`   Group data using multiple columns
   -----------------------------------------------------------------------
+
+### 5. Advanced Functions
+
+This module covers commonly used PySpark functions for practical DataFrame operations.
+
+| File | Concept |
+|---|---|
+| `01_string_functions.py` | String manipulation and transformation functions |
+| `02_numeric_functions.py` | Numeric and mathematical functions |
+| `03_date_time_functions.py` | Date and time functions |
+| `04_aggregation_functions.py` | Aggregation functions |
+| `05_joins.py` | Join operations |
+| `06_array_functions.py` | Array functions |
+
+### 6. Window Functions
+
+This module covers analytical operations using PySpark window specifications.
+
+| File | Concept |
+|---|---|
+| `01_row_number.py` | `row_number()` |
+| `02_rank.py` | `rank()` |
+| `03_dense_rank.py` | `dense_rank()` |
+| `04_lag.py` | `lag()` |
+| `05_lead.py` | `lead()` |
+| `06_running_totals.py` | Running totals |
+| `07_Window_partitionBy.py` | `Window.partitionBy()` |
+| `08_Window_orderBy.py` | `Window.orderBy()` |
+
+### Window Function Concepts
+
+- `row_number()`
+- `rank()`
+- `dense_rank()`
+- `lag()`
+- `lead()`
+- Running totals
+- `Window.partitionBy()`
+- `Window.orderBy()`
 
 ## Dataset Description
 
