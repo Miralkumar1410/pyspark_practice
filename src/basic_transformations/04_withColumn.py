@@ -17,12 +17,13 @@ df = spark.read.option("header", True).option("inferSchema", True).csv(
 )
 
 # Create a new column.
-result = df.withColumn("age_after_five_years", col("age") + 5)
+df= df.withColumn("age_after_five_years", col("age") + 5)
 
 # Create a constant column.
-result = result.withColumn("country", lit("India"))
+result = df.withColumn("country", lit("India"))
 
 result.show()
+df.show()
 
 # Replace an existing column.
 result = result.withColumn("age", col("age") + 1)
