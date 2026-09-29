@@ -26,6 +26,12 @@ pyspark_practice/
 │   │   ├── 03_read_parquet.py
 │   │   └── 04_read_delta.py
 │   │
+│   ├── 00_writing_practice/
+│   │   ├── 01_write_csv.py
+│   │   ├── 02_write_json.py
+│   │   ├── 03_write_parquet.py
+│   │   └── 04_write_delta.py
+│   │
 │   ├── 01_basic_transformations/
 │   │   ├── 01_select.py
 │   │   ├── 02_filter.py
@@ -63,15 +69,37 @@ pyspark_practice/
 │   │   ├── 05_joins.py
 │   │   └── 06_array_functions.py
 │   │
-│   └── 05_Window_Functions/
-│       ├── 01_row_number.py
-│       ├── 02_rank.py
-│       ├── 03_dense_rank.py
-│       ├── 04_lag.py
-│       ├── 05_lead.py
-│       ├── 06_running_totals.py
-│       ├── 07_Window_partitionBy.py
-│       └── 08_Window_orderBy.py
+│   ├── 05_Window_Functions/
+│   │   ├── 01_row_number.py
+│   │   ├── 02_rank.py
+│   │   ├── 03_dense_rank.py
+│   │   ├── 04_lag.py
+│   │   ├── 05_lead.py
+│   │   ├── 06_running_totals.py
+│   │   ├── 07_Window_partitionBy.py
+│   │   └── 08_Window_orderBy.py
+│   │
+│   ├── 06_Nested_Data/
+│   │   ├── 01_arrays.py
+│   │   ├── 02_structs.py
+│   │   ├── 03_explode.py
+│   │   ├── 04_from_json.py
+│   │   ├── 05_nested_json_parsing.py
+│   │   └── 06_accessing_nested_fields.py
+│   │
+│   ├── 07_UDF/
+│   │   ├── 01_python_udf.py
+│   │   ├── 02_udf_with_multiple_columns.py
+│   │   ├── 03_udf_condition.py
+│   │   └── 04_udf_vs_builtin.py
+│   │
+│   ├── 08_SCD/
+│   │   ├── 01_type_1.py
+│   │   ├── 02_type_2.py
+│   │   └── 03_type_3.py
+│   │
+│   └── PySpark_Basic_Syntax/
+│       └── 01_pyspark_basic_syntax.py
 │
 ├── data/
 │   ├── customers.csv
@@ -216,6 +244,59 @@ This module covers analytical operations using PySpark window specifications.
 - Running totals
 - `Window.partitionBy()`
 - `Window.orderBy()`
+
+### 7. Nested Data
+
+This module covers working with arrays, structs, JSON data, and nested fields in PySpark.
+
+| File | Concept |
+|---|---|
+| `01_arrays.py` | Arrays in PySpark |
+| `02_structs.py` | Structs in PySpark |
+| `03_explode.py` | `explode()` for nested collections |
+| `04_from_json.py` | Parse JSON strings using `from_json()` |
+| `05_nested_json_parsing.py` | Nested JSON parsing |
+| `06_accessing_nested_fields.py` | Access nested fields |
+
+### 8. User Defined Functions
+
+This module covers Python UDFs, UDFs with multiple columns, conditional UDFs, and comparison with built-in Spark functions.
+
+| File | Concept |
+|---|---|
+| `01_python_udf.py` | Python UDF |
+| `02_udf_with_multiple_columns.py` | UDF with multiple columns |
+| `03_udf_condition.py` | Conditional UDF |
+| `04_udf_vs_builtin.py` | UDF versus built-in functions |
+
+### 9. Slowly Changing Dimensions
+
+This module covers different Slowly Changing Dimension strategies.
+
+| File | Concept |
+|---|---|
+| `01_type_1.py` | SCD Type 1 |
+| `02_type_2.py` | SCD Type 2 |
+| `03_type_3.py` | SCD Type 3 |
+
+### 10. Writing Data
+
+This module demonstrates writing DataFrames to different file formats.
+
+| File | Concept |
+|---|---|
+| `01_write_csv.py` | Write DataFrame data to CSV |
+| `02_write_json.py` | Write DataFrame data to JSON |
+| `03_write_parquet.py` | Write DataFrame data to Parquet |
+| `04_write_delta.py` | Write DataFrame data to Delta |
+
+### 11. PySpark Basic Syntax
+
+This module contains basic PySpark syntax practice.
+
+| File | Concept |
+|---|---|
+| `01_pyspark_basic_syntax.py` | PySpark basic syntax |
 
 ## Dataset Description
 
