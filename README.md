@@ -2,8 +2,6 @@
 
 ## Project Overview
 
-This repository is created to strengthen practical knowledge of PySpark
-and distributed data processing concepts through small, focused scripts.
 
 The current modules cover:
 
@@ -12,27 +10,36 @@ The current modules cover:
 -   Grouping and aggregation functions
 -   Advanced PySpark functions
 -   Window functions
--   CSV-based input data
+-   Nested data processing
+-   User Defined Functions (UDFs)
+-   Slowly Changing Dimensions (SCD)
+-   PySpark basic syntax
+-   Built-in PySpark functions
+-   Pandas `applyInPandas()`
+-   Partition management
+-   Data skew and salting
+-   Reading and writing multiple data formats
+-   CSV and JSON-based input data
 
 ## Project Structure
 
-``` text
+```text
 pyspark_practice/
 │
 ├── src/
-│   ├── 00_reading_practice/
+│   ├── reading_practice/
 │   │   ├── 01_read_csv.py
 │   │   ├── 02_read_json.py
 │   │   ├── 03_read_parquet.py
 │   │   └── 04_read_delta.py
-│   │
-│   ├── 00_writing_practice/
+│
+│   ├── writing_practice/
 │   │   ├── 01_write_csv.py
 │   │   ├── 02_write_json.py
 │   │   ├── 03_write_parquet.py
 │   │   └── 04_write_delta.py
-│   │
-│   ├── 01_basic_transformations/
+│
+│   ├── basic_transformations/
 │   │   ├── 01_select.py
 │   │   ├── 02_filter.py
 │   │   ├── 03_where.py
@@ -40,8 +47,8 @@ pyspark_practice/
 │   │   ├── 05_when_otherwise.py
 │   │   ├── 06_column_expressions.py
 │   │   └── 07_aliases.py
-│   │
-│   ├── 02_joins/
+│
+│   ├── joins/
 │   │   ├── 01_inner_join.py
 │   │   ├── 02_left_join.py
 │   │   ├── 03_full_outer_join.py
@@ -50,8 +57,8 @@ pyspark_practice/
 │   │   ├── 06_join_conditions.py
 │   │   ├── 07_duplicate_columns.py
 │   │   └── 08_null_values_in_joins.py
-│   │
-│   ├── 03_aggregations/
+│
+│   ├── aggregations/
 │   │   ├── 01_groupBy.py
 │   │   ├── 02_agg.py
 │   │   ├── 03_sum.py
@@ -60,16 +67,16 @@ pyspark_practice/
 │   │   ├── 06_min_max.py
 │   │   ├── 07_multiple_aggregations.py
 │   │   └── 08_multiple_grouping_columns.py
-│   │
-│   ├── 04_Advanced_Functions/
+│
+│   ├── advanced_functions/
 │   │   ├── 01_string_functions.py
 │   │   ├── 02_numeric_functions.py
 │   │   ├── 03_date_time_functions.py
 │   │   ├── 04_aggregation_functions.py
 │   │   ├── 05_joins.py
 │   │   └── 06_array_functions.py
-│   │
-│   ├── 05_Window_Functions/
+│
+│   ├── window_functions/
 │   │   ├── 01_row_number.py
 │   │   ├── 02_rank.py
 │   │   ├── 03_dense_rank.py
@@ -78,34 +85,61 @@ pyspark_practice/
 │   │   ├── 06_running_totals.py
 │   │   ├── 07_Window_partitionBy.py
 │   │   └── 08_Window_orderBy.py
-│   │
-│   ├── 06_Nested_Data/
+│
+│   ├── nested_data/
 │   │   ├── 01_arrays.py
 │   │   ├── 02_structs.py
 │   │   ├── 03_explode.py
 │   │   ├── 04_from_json.py
 │   │   ├── 05_nested_json_parsing.py
 │   │   └── 06_accessing_nested_fields.py
-│   │
-│   ├── 07_UDF/
+│
+│   ├── udf/
 │   │   ├── 01_python_udf.py
 │   │   ├── 02_udf_with_multiple_columns.py
 │   │   ├── 03_udf_condition.py
 │   │   └── 04_udf_vs_builtin.py
-│   │
-│   ├── 08_SCD/
+│
+│   ├── scd/
 │   │   ├── 01_type_1.py
 │   │   ├── 02_type_2.py
 │   │   └── 03_type_3.py
-│   │
-│   └── PySpark_Basic_Syntax/
-│       └── 01_pyspark_basic_syntax.py
+│
+│   ├── pyspark_basic_syntax/
+│   │   └── 01_pyspark_basic_syntax.py
+│
+│   ├── built_in_functions/
+│   │   ├── 01_limit_function.py
+│   │   ├── 02_where_function.py
+│   │   ├── 03_like_function.py
+│   │   ├── 04_withColumnRenamed_function.py
+│   │   ├── 05_drop_function.py
+│   │   ├── 06_distinct_function.py
+│   │   ├── 07_dropDuplicates_function.py
+│   │   ├── 08_sort_function.py
+│   │   ├── 09_fillna_function.py
+│   │   ├── 10_dropna_function.py
+│   │   ├── 11_union_function.py
+│   │   ├── 12_unionAll_function.py
+│   │   └── 13_pivot_function.py
+│
+│   ├── applyinpandas/
+│   │   └── 01_applyinpandas_function.py
+│
+│   ├── partitions/
+│   │   ├── 01_check_no_of_partitions.py
+│   │   ├── 02_repartition.py
+│   │   └── 03_coalesce.py
+│
+│   └── data_skew/
+│       └── 01_salting.py
 │
 ├── data/
 │   ├── customers.csv
 │   ├── departments.csv
 │   ├── employees.csv
-│   └── orders.csv
+│   ├── orders.csv
+│   └── customers.json
 │
 └── README.md
 ```
@@ -297,6 +331,53 @@ This module contains basic PySpark syntax practice.
 | File | Concept |
 |---|---|
 | `01_pyspark_basic_syntax.py` | PySpark basic syntax |
+
+### 12. Built-in Functions
+
+This module contains practice with commonly used PySpark DataFrame functions.
+
+| File | Concept |
+|---|---|
+| `01_limit_function.py` | `limit()` |
+| `02_where_function.py` | `where()` |
+| `03_like_function.py` | `like()` |
+| `04_withColumnRenamed_function.py` | `withColumnRenamed()` |
+| `05_drop_function.py` | `drop()` |
+| `06_distinct_function.py` | `distinct()` |
+| `07_dropDuplicates_function.py` | `dropDuplicates()` |
+| `08_sort_function.py` | `sort()` |
+| `09_fillna_function.py` | `fillna()` |
+| `10_dropna_function.py` | `dropna()` |
+| `11_union_function.py` | `union()` |
+| `12_unionAll_function.py` | `unionAll()` |
+| `13_pivot_function.py` | `pivot()` |
+
+### 13. Pandas `applyInPandas()`
+
+This module contains practice with applying pandas functions to PySpark grouped data using `applyInPandas()`.
+
+| File | Concept |
+|---|---|
+| `01_applyinpandas_function.py` | `applyInPandas()` |
+
+### 14. Partitions
+
+This module covers inspecting and managing Spark DataFrame partitions.
+
+| File | Concept |
+|---|---|
+| `01_check_no_of_partitions.py` | Check the number of partitions |
+| `02_repartition.py` | Repartition a DataFrame |
+| `03_coalesce.py` | Reduce the number of partitions using `coalesce()` |
+
+### 15. Data Skew
+
+This module demonstrates a basic technique for mitigating data skew during distributed processing.
+
+| File | Concept |
+|---|---|
+| `01_salting.py` | Salting technique for data skew |
+
 
 ## Dataset Description
 
